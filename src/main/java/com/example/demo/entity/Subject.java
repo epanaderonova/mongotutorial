@@ -1,0 +1,28 @@
+package com.example.demo.entity;
+
+import org.springframework.data.mongodb.core.mapping.Field;
+
+public class Subject {
+
+    @Field(name = "subject_name")
+    private String subjectName;
+
+    @Field(name = "marks_obtained")
+    private int marksObtained;
+
+    public String getSubjectName() {
+        return this.subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    public int getMarksObtained() {
+        return this.marksObtained;
+    }
+
+    public void setMarksObtained(int marksObtained) {
+        this.marksObtained = marksObtained;
+    }
+}
