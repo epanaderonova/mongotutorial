@@ -1,12 +1,19 @@
 package com.example.demo.entity;
 
 import java.util.List;
-import javax.security.auth.Subject;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document("student")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Student {
 
     @Id
@@ -20,16 +27,5 @@ public class Student {
     private Department department;
 
     private List<Subject> subjects;
-
-    public Student(String id, String name, String mail, Department department, List<Subject> subjects) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.email = mail;
-        this.department = department;
-        this.subjects = subjects;
-    }
-
-
 
 }
