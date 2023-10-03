@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,11 @@ public class StudentController {
     @GetMapping("/getStudentById/{id}")
     public Student getStudentById(@PathVariable String id) {
         return studentService.getStudentById(id);
+    }
+
+    @GetMapping("/getAllStudents")
+    public List<Student> getAllStudents() {
+        return studentService.getAllStudents();
     }
 
 }
