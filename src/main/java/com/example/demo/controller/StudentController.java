@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -48,6 +49,11 @@ public class StudentController {
     @GetMapping("/getStudentsByName/{name}")
     public List<Student> getStudentsByName(@PathVariable String name) {
         return studentService.getStudentsByName(name);
+    }
+
+    @GetMapping("/getStudentsByNameAndMail")
+    public Student getStudentsByNameAndMail(@RequestParam String name, @RequestParam String email) {
+        return studentService.getStudentsByNameAndMail(name, email);
     }
 
 }
